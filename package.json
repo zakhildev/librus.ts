@@ -1,0 +1,12 @@
+{
+  "name": "librus.ts",
+  "version": "1.0.0",
+  "description": "Library for interacting with the Librus API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["Librus", "API"],
+  "author": "Zakhil",
+  "license": "MIT"
+}
