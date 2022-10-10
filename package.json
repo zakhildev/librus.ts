@@ -4,7 +4,10 @@
   "description": "Library for interacting with the Librus API",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "format": "prettier --config .prettierrc ./src/**/*.ts --write",
+    "lint": "eslint --color ./src/**/*.ts",
+    "prebuild": "pnpm run format && pnpm run lint",
+    "build": "pnpm run prebuild && tsc"
   },
   "keywords": [
     "Librus",
@@ -13,9 +16,12 @@
   "author": "Zakhil",
   "license": "MIT",
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.39.0",
+    "@typescript-eslint/parser": "^5.39.0",
     "eslint": "^8.25.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "prettier": "^2.7.1"
+    "prettier": "^2.7.1",
+    "typescript": "^4.8.4"
   }
 }
