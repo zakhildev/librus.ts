@@ -4,15 +4,15 @@ Library for interacting with the Librus API
 ## Installation
 * npm:
   ```bash
-  $ npm install librus.ts
+  npm install librus.ts
   ```
 * yarn:
   ```bash
-  $ yarn add librus.ts
+  yarn add librus.ts
   ```
 * pnpm:
   ```bash
-  $ pnpm add librus.ts
+  pnpm add librus.ts
   ```
 
 ## Credits
