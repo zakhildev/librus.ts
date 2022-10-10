@@ -3,11 +3,18 @@
   "version": "1.0.0",
   "description": "Library for interacting with the Librus API",
   "main": "index.js",
+  "types": "index.d.ts",
+  "readme": "README.md",
   "scripts": {
     "format": "prettier --config .prettierrc ./src/**/*.ts --write",
     "lint": "eslint --color ./src/**/*.ts",
-    "prebuild": "pnpm run format && pnpm run lint",
-    "build": "pnpm run prebuild && tsc"
+    "prebuild": "npm run format && npm run lint",
+    "build": "npm run prebuild && tsc",
+    "publish": "rm -rf dist && tsc && cp package.json dist && npm publish ./dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zakhildev/librus.ts.git"
   },
   "keywords": [
     "Librus",
@@ -15,6 +22,9 @@
   ],
   "author": "Zakhil",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zakhildev/librus.ts/issues"
+  },
   "devDependencies": {
     "@types/tough-cookie": "^4.0.2",
     "@typescript-eslint/eslint-plugin": "^5.39.0",
