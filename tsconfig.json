@@ -1,15 +1,17 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
-    "module": "commonjs",
-    "lib": ["ESNext", "DOM"],
-    "declaration": true,
+    "target": "ES6",
+    "module": "CommonJS",
+    "lib": ["ES6", "DOM"],
     "outDir": "dist",
+    "declaration": true,
     "strict": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "moduleResolution": "node"
   },
   "exclude": [
     "node_modules",
     "dist"
-  ]
+  ],
+  "files": ["src/index.ts"]
 }
