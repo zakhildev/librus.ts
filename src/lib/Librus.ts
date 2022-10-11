@@ -12,7 +12,6 @@ export default class Librus {
   private jar: CookieJar;
   public api: AxiosInstance;
   public modules = {
-    me: new Me(this),
     users: new Users(this),
     class: new Class(this),
   };
