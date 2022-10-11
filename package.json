@@ -10,7 +10,7 @@
     "lint": "eslint --color ./src/**/*.ts",
     "prebuild": "npm run format && npm run lint",
     "build": "npm run prebuild && tsc",
-    "publish": "rm -rf dist && tsc && cp package.json dist && npm publish ./dist"
+    "publish": "rm -rf dist && npm run build && cp package.json dist && npm publish ./dist"
   },
   "repository": {
     "type": "git",
