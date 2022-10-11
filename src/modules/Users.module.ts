@@ -6,9 +6,7 @@ import Settings from '../lib/Settings';
 
 export default class Users extends Module {
   public async getUsers() {
-    const res = await this.librus.api.get(
-      Settings.apiUrl + 'Users'
-    );
+    const res = await this.librus.api.get(Settings.apiUrl + 'Users');
     const users = res.data['Users'] as [];
     const newUsers: User[] = [];
     users.forEach((user) => {
@@ -25,9 +23,7 @@ export default class Users extends Module {
   }
 
   public async getUser(id: number) {
-    const res = await this.librus.api.get(
-      Settings.apiUrl + 'Users/' + id
-    );
+    const res = await this.librus.api.get(Settings.apiUrl + 'Users/' + id);
     const userData = res.data['User'];
     if (userData['Class'] != undefined) {
       const newUser = new Student(
@@ -47,15 +43,13 @@ export default class Users extends Module {
       userData['AccountId'],
       userData['FirstName'],
       userData['LastName'],
-      userData['IsEmployee'],
+      userData['IsEmployee']
     );
     return newUser;
   }
 
   public async getSelf() {
-    const res = await this.librus.api.get(
-      Settings.apiUrl + 'Me'
-    );
+    const res = await this.librus.api.get(Settings.apiUrl + 'Me');
     const selfData = res.data['Me'];
     const me = new Me(
       selfData['Account']['Id'],

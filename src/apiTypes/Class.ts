@@ -1,4 +1,4 @@
-import GenericApiType from "./GenericApiType";
+import GenericApiType from './GenericApiType';
 
 export default class Class extends GenericApiType {
   constructor(id: number) {

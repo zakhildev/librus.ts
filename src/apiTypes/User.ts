@@ -1,4 +1,4 @@
-import GenericApiType from "./GenericApiType";
+import GenericApiType from './GenericApiType';
 
 export default class User extends GenericApiType {
   accountId: string;
@@ -11,7 +11,7 @@ export default class User extends GenericApiType {
     accountId: string,
     firstName: string,
     lastName: string,
-    isEmployee: boolean,
+    isEmployee: boolean
   ) {
     super(id);
     this.accountId = accountId;

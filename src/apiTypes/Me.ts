@@ -1,4 +1,4 @@
-import GenericApiType from "./GenericApiType";
+import GenericApiType from './GenericApiType';
 
 export default class Me extends GenericApiType {
   userId!: number;
@@ -9,7 +9,7 @@ export default class Me extends GenericApiType {
   isPremium!: boolean;
   isPremiumDemo!: boolean;
   expiredPremiumDate!: number;
-  class!: number
+  class!: number;
 
   constructor(
     id: number,

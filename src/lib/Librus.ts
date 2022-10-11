@@ -2,7 +2,6 @@ import { CookieJar } from 'tough-cookie';
 import axios, { AxiosInstance } from 'axios';
 import { wrapper } from 'axios-cookiejar-support';
 import Settings from './Settings';
-import Me from '../modules/Me.module';
 import Users from '../modules/Users.module';
 import Class from '../modules/Class.module';
 
