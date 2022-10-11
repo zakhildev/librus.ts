@@ -2,12 +2,20 @@ import { CookieJar } from 'tough-cookie';
 import axios, { AxiosInstance } from 'axios';
 import { wrapper } from 'axios-cookiejar-support';
 import Settings from './Settings';
+import Me from '../modules/Me.module';
+import Users from '../modules/Users.module';
+import Class from '../modules/Class.module';
 
 export default class Librus {
   private username: string;
   private pass: string;
   private jar: CookieJar;
   public api: AxiosInstance;
+  public modules = {
+    me: new Me(this),
+    users: new Users(this),
+    class: new Class(this),
+  };
 
   constructor(username: string, pass: string) {
     this.username = username;
