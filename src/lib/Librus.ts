@@ -4,6 +4,7 @@ import { wrapper } from 'axios-cookiejar-support';
 import Settings from './Settings';
 import Users from '../modules/Users.module';
 import Classes from '../modules/Classes.module';
+import Units from '../modules/Units.module';
 
 export default class Librus {
   private username: string;
@@ -13,6 +14,7 @@ export default class Librus {
   public modules = {
     users: new Users(this),
     class: new Classes(this),
+    //units: new Units(this),
   };
 
   constructor(username: string, pass: string) {
