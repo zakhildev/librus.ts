@@ -4,7 +4,10 @@ import Settings from '../lib/Settings';
 
 export default class Classes extends Module {
   async getClass(id?: number) {
-    const url = (id == undefined) ? Settings.apiUrl + 'Classes' : Settings.apiUrl + `Classes/${id}`;
+    const url =
+      id == undefined
+        ? Settings.apiUrl + 'Classes'
+        : Settings.apiUrl + `Classes/${id}`;
     const res = await this.librus.api.get(url);
     if (this.librus.checkRes(res)) return undefined;
     const data = res.data;
@@ -15,7 +18,7 @@ export default class Classes extends Module {
       data['Class']['BeginSchoolYear'],
       data['Class']['EndFirstSemester'],
       data['Class']['Unit']['Id'],
-      data['Class']['ClassTutor']['Id'],
+      data['Class']['ClassTutor']['Id']
     );
     return newClass;
   }
