@@ -1,9 +1,9 @@
 import { CookieJar } from 'tough-cookie';
-import axios, { AxiosInstance } from 'axios';
+import axios, { AxiosInstance, AxiosResponse } from 'axios';
 import { wrapper } from 'axios-cookiejar-support';
 import Settings from './Settings';
 import Users from '../modules/Users.module';
-import Class from '../modules/Class.module';
+import Classes from '../modules/Classes.module';
 
 export default class Librus {
   private username: string;
@@ -12,7 +12,7 @@ export default class Librus {
   public api: AxiosInstance;
   public modules = {
     users: new Users(this),
-    class: new Class(this),
+    class: new Classes(this),
   };
 
   constructor(username: string, pass: string) {
@@ -60,6 +60,14 @@ export default class Librus {
       return this.jar.getCookies(Settings.librusUrl);
     } else {
       throw new Error('Invalid credentials');
+    }
+  }
+
+  public checkRes(res: AxiosResponse) {
+    if (res.data['Status'] == 'Error') {
+      return true;
+    } else {
+      return false;
     }
   }
 }
