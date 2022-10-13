@@ -9,13 +9,15 @@ export default class Classes extends Module {
         ? Settings.apiUrl + 'Classes'
         : Settings.apiUrl + `Classes/${id}`;
     const res = await this.librus.api.get(url);
-    
+
     switch (res.status) {
       case 404:
         return undefined;
       case 401:
         await this.librus.login();
-        return (id != undefined) ? await this.getClass(id) : await this.getClass();
+        return id != undefined
+          ? await this.getClass(id)
+          : await this.getClass();
       default:
         break;
     }

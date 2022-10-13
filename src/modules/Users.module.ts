@@ -7,7 +7,7 @@ import Settings from '../lib/Settings';
 export default class Users extends Module {
   public async getUsers(): Promise<User[] | undefined> {
     const res = await this.librus.api.get(Settings.apiUrl + 'Users');
-    
+
     switch (res.status) {
       case 404:
         return undefined;
@@ -17,7 +17,6 @@ export default class Users extends Module {
       default:
         break;
     }
-
 
     const users = res.data['Users'] as [];
     const newUsers: User[] = [];
@@ -73,7 +72,7 @@ export default class Users extends Module {
 
   public async getSelf(): Promise<Me | undefined> {
     const res = await this.librus.api.get(Settings.apiUrl + 'Me');
-    
+
     switch (res.status) {
       case 404:
         return undefined;
