@@ -5,9 +5,20 @@ import Module from '../lib/Module';
 import Settings from '../lib/Settings';
 
 export default class Users extends Module {
-  public async getUsers() {
+  public async getUsers(): Promise<User[] | undefined> {
     const res = await this.librus.api.get(Settings.apiUrl + 'Users');
-    if (this.librus.checkRes(res)) return undefined;
+    
+    switch (res.status) {
+      case 404:
+        return undefined;
+      case 401:
+        await this.librus.login();
+        return await this.getUsers();
+      default:
+        break;
+    }
+
+
     const users = res.data['Users'] as [];
     const newUsers: User[] = [];
     users.forEach((user) => {
@@ -23,9 +34,19 @@ export default class Users extends Module {
     return newUsers;
   }
 
-  public async getUser(id: number) {
+  public async getUser(id: number): Promise<User | undefined> {
     const res = await this.librus.api.get(Settings.apiUrl + 'Users/' + id);
-    if (this.librus.checkRes(res)) return undefined;
+
+    switch (res.status) {
+      case 404:
+        return undefined;
+      case 401:
+        await this.librus.login();
+        return await this.getUser(id);
+      default:
+        break;
+    }
+
     const userData = res.data['User'];
     if (userData['Class'] != undefined) {
       const newUser = new Student(
@@ -50,9 +71,19 @@ export default class Users extends Module {
     return newUser;
   }
 
-  public async getSelf() {
+  public async getSelf(): Promise<Me | undefined> {
     const res = await this.librus.api.get(Settings.apiUrl + 'Me');
-    if (this.librus.checkRes(res)) return undefined;
+    
+    switch (res.status) {
+      case 404:
+        return undefined;
+      case 401:
+        await this.librus.login();
+        return await this.getSelf();
+      default:
+        break;
+    }
+
     const selfData = res.data['Me'];
     const me = new Me(
       selfData['Account']['Id'],

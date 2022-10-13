@@ -64,12 +64,4 @@ export default class Librus {
       throw new Error('Invalid credentials');
     }
   }
-
-  public checkRes(res: AxiosResponse) {
-    if (res.data['Status'] == 'Error') {
-      return true;
-    } else {
-      return false;
-    }
-  }
 }
