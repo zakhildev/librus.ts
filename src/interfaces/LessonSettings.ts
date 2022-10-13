@@ -1,10 +1,10 @@
 interface LessonSettings {
-  allowZeroLessonNumber: boolean;
-  maxLessonNumber: number;
-  isExtramuralCourse: boolean;
-  isAdultsDaily: boolean;
-  allowAddOtherLessons: boolean;
-  allowAddSubstitutions: boolean;
+  AllowZeroLessonNumber: boolean;
+  MaxLessonNumber: number;
+  IsExtramuralCourse: boolean;
+  IsAdultsDaily: boolean;
+  AllowAddOtherLessons: boolean;
+  AllowAddSubstitutions: boolean;
 }
 
 export default LessonSettings;

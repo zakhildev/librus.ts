@@ -5,12 +5,12 @@ import Module from '../lib/Module';
 import Settings from '../lib/Settings';
 
 export default class Users extends Module {
-  public async getUsers(): Promise<User[] | undefined> {
+  public async getUsers(): Promise<User[]> {
     const res = await this.librus.api.get(Settings.apiUrl + 'Users');
 
     switch (res.status) {
       case 404:
-        return undefined;
+        return [];
       case 401:
         await this.librus.login();
         return await this.getUsers();

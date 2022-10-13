@@ -1,9 +1,9 @@
 interface BehaviourGradesSettings {
-  startPoints: {
-    semester1: number;
-    semester2: number;
+  StartPoints: {
+    Semester1: number;
+    Semester2: number;
   };
-  showCategoriesShortcuts: boolean;
+  ShowCategoriesShortcuts: boolean;
 }
 
 export default BehaviourGradesSettings;

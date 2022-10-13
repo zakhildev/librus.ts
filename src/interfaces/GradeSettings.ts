@@ -1,11 +1,11 @@
 interface GradeSettings {
-  standardGradesEnabled: boolean;
-  pointGradesEnabled: boolean;
-  descriptiveGradesEnabled: boolean;
-  forcePointGradesDictionaries: boolean;
-  allowOverrangePointGrades: boolean;
-  allowClassTutorEditGrades: boolean;
-  canAddAnyGrades: boolean;
+  StandardGradesEnabled: boolean;
+  PointGradesEnabled: boolean;
+  DescriptiveGradesEnabled: boolean;
+  ForcePointGradesDictionaries: boolean;
+  AllowOverrangePointGrades: boolean;
+  AllowClassTutorEditGrades: boolean;
+  CanAddAnyGrades: boolean;
 }
 
 export default GradeSettings;

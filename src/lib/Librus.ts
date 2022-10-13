@@ -1,5 +1,5 @@
 import { CookieJar } from 'tough-cookie';
-import axios, { AxiosInstance, AxiosResponse } from 'axios';
+import axios, { AxiosInstance } from 'axios';
 import { wrapper } from 'axios-cookiejar-support';
 import Settings from './Settings';
 import Users from '../modules/Users.module';
@@ -14,7 +14,7 @@ export default class Librus {
   public modules = {
     users: new Users(this),
     class: new Classes(this),
-    //units: new Units(this),
+    units: new Units(this),
   };
 
   constructor(username: string, pass: string) {
